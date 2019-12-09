@@ -289,36 +289,50 @@ class _BaseView extends State<BaseView> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            new Row(
-              children: <Widget>[
-                FlatButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: widget.cancelWidget ??
-                      new Text(
-                        '取消',
-                        style: new TextStyle(
-                          color: Theme.of(context).primaryColor,
+            Container(
+              height: 42,
+              child: Row(
+                children: <Widget>[
+                  FlatButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: widget.cancelWidget ??
+                        new Text(
+                          '取消',
+                          style: new TextStyle(
+                              color: Color.fromRGBO(0, 0, 0, 0.4),
+                              fontSize: 17),
                         ),
-                      ),
-                ),
-                FlatButton(
-                  onPressed: () {
-                    Navigator.pop(context, _buildResult());
-                  },
-                  child: widget.confirmWidget ??
-                      new Text(
-                        '确定',
-                        style: new TextStyle(
-                          color: Theme.of(context).primaryColor,
+                  ),
+                  Expanded(
+                    child: Text(
+                      '选择地点',
+                      style: TextStyle(fontSize: 17, color: Colors.black),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  FlatButton(
+                    onPressed: () {
+                      Navigator.pop(context, _buildResult());
+                    },
+                    child: widget.confirmWidget ??
+                        new Text(
+                          '确定',
+                          style: new TextStyle(
+                              color: Color.fromRGBO(104, 72, 209, 1),
+                              fontSize: 17),
                         ),
-                      ),
-                ),
-              ],
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  ),
+                ],
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+              ),
+            ),
+            Container(
+              color: Color.fromRGBO(221, 221, 221, 1),
+              height: 0.5,
             ),
             Expanded(
               child: new Row(
