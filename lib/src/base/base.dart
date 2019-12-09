@@ -290,7 +290,7 @@ class _BaseView extends State<BaseView> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Container(
-              height: 42,
+              height: 45,
               child: Row(
                 children: <Widget>[
                   FlatButton(
@@ -457,11 +457,11 @@ class _MyCityPickerState extends State<_MyCityPicker> {
     return new Expanded(
       child: new Container(
           color: Theme.of(context).scaffoldBackgroundColor,
-          padding: const EdgeInsets.all(6.0),
+          padding: const EdgeInsets.all(0),
           alignment: Alignment.center,
           child: CupertinoPicker.builder(
               magnification: 1.0,
-              itemExtent: widget.itemExtent ?? 40.0,
+              itemExtent: widget.itemExtent ?? 42.0,
               backgroundColor: Theme.of(context).scaffoldBackgroundColor,
               scrollController: widget.controller,
               onSelectedItemChanged: (index) {
@@ -476,6 +476,7 @@ class _MyCityPickerState extends State<_MyCityPicker> {
                   child: Text(
                     '${widget.itemList[index]}',
                     maxLines: 1,
+                    style: TextStyle(color: Colors.black,fontSize: 17),
                   ),
                 );
               },
